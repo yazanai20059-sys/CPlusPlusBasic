@@ -1,31 +1,81 @@
 #include <iostream>
-#include <cmath>   // Para usar pow()
+#include <math.h>
 using namespace std;
 
 int main() {
-    int x, y;
-
-    cout << "Introduce un número: ";
-    cin >> x;
-
-    cout << "Introduce otro número: ";
-    cin >> y;
-
-    // Operaciones
-    int suma = x + y;
-    int resta = x - y;
-    int multiplicacion = x * y;
-    double division = (double)x / y;   // Convertimos a double para división decimal
-    double potencia = pow(x, y);       // x elevado a y
-    double porcentaje = (x * y) / 100.0;
-
-    // Resultados
-    cout << "La suma de " << x << " y " << y << " es: " << suma << endl;
-    cout << "La resta de " << x << " y " << y << " es: " << resta << endl;
-    cout << "La multiplicación de " << x << " y " << y << " es: " << multiplicacion << endl;
-    cout << "La división de " << x << " y " << y << " es: " << division << endl;
-    cout << "La elevación de " << x << " a " << y << " es: " << potencia << endl;
-    cout << "El " << x << "% de " << y << " es: " << porcentaje << endl;
-
-    return 0;
+    int x;
+    while (x!=0){
+        cout << "Salir pon 0\n" << endl;
+        cout << "entero pon 1\n" << endl;
+        cout << "Decimal pon 2\n" << endl;
+        cin >> x;
+        if (x==1){
+            int c, v;
+        cout << "sumar pon 0\n" << endl;
+        cout << "restar pon 1\n" << endl;
+        cout << "dividir pon 2\n" << endl;
+        cout << "multiplicar pon 3\n" << endl;
+        cout << "potencia pon 4\n" << endl;
+        cin >> x;
+            if (x==0){
+                cin >> c;
+                cin >> v;
+                cout << "tu respuesta es " << (c+v) << endl;
+            }
+            if (x==1){
+                cin >> c;
+                cin >> v;
+                cout << "tu respuesta es " << (c-v) << endl;
+            }
+            if (x==2){
+                cin >> c;
+                cin >> v;
+                cout << "tu respuesta es " << (c/v) << endl;
+            }
+            if (x=3){
+                cin >> c;
+                cin >> v;
+                cout << "tu respuesta es " << (c*v) << endl;
+            }
+            if (x==4){
+                cin >> c;
+                cin >> v;
+                cout << "tu respuesta es " << pow(c+v) << endl;
+            }
+        }
+        if (x==1){
+            double c, v;
+        cout << "sumar pon 0\n" << endl;
+        cout << "restar pon 1\n" << endl;
+        cout << "dividir pon 2\n" << endl;
+        cout << "multiplicar pon 3\n" << endl;
+        cout << "potencia pon 4\n" << endl;
+        cin >> x;
+            if (x==0){
+                cin >> c;
+                cin >> v;
+                cout << "tu respuesta es " << (c+v) << endl;
+            }
+            if (x==1){
+                cin >> c;
+                cin >> v;
+                cout << "tu respuesta es " << (c-v) << endl;
+            }
+            if (x==2){
+                cin >> c;
+                cin >> v;
+                cout << "tu respuesta es " << (c/v) << endl;
+            }
+            if (x=3){
+                cin >> c;
+                cin >> v;
+                cout << "tu respuesta es " << (c*v) << endl;
+            }
+            if (x==4){
+                cin >> c;
+                cin >> v;
+                cout << "tu respuesta es " << pow(c+v) << endl;
+            }
+        }
+    }
 }
