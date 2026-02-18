@@ -7,4 +7,4 @@ int main() {
     string y;
     cin >> y;
     cout << x << endl;
-}
+} 

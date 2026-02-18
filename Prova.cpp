@@ -11,4 +11,4 @@ cout << "Escribe nom de B:" << endl;
 cin >> y;
 cout << x.insert(x.size(),y) << endl;
 return 0;
-}
+} 

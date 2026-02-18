@@ -2,6 +2,10 @@
 using namespace std;
 
 int main() {
-    std x;
-    
+    string x, y;
+    cout << "Escriu el teu nom" << endl;
+    cin >> x;
+    cout << "Escriu el teu cognom" << endl;
+    cin >> y;
+    cout << "Hola, " << x << y << endl;
 }
