@@ -1,81 +1,90 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 using namespace std;
 
 int main() {
     int x;
-    while (x!=0){
+    while (true) {
         cout << "Salir pon 0\n" << endl;
-        cout << "entero pon 1\n" << endl;
+        cout << "Entero pon 1\n" << endl;
         cout << "Decimal pon 2\n" << endl;
+        cout << "Escribe tu elecion: " << endl;
         cin >> x;
-        if (x==1){
-            int c, v;
-        cout << "sumar pon 0\n" << endl;
-        cout << "restar pon 1\n" << endl;
-        cout << "dividir pon 2\n" << endl;
-        cout << "multiplicar pon 3\n" << endl;
-        cout << "potencia pon 4\n" << endl;
-        cin >> x;
-            if (x==0){
-                cin >> c;
-                cin >> v;
-                cout << "tu respuesta es " << (c+v) << endl;
+
+        if (x == 0) {
+            break;  // Para salir del bucle
+        }
+
+        if (x == 1) {
+            // Operaciones con enteros
+            int c, v, o;
+            cout << "Sumar pon 0\n" << endl;
+            cout << "Restar pon 1\n" << endl;
+            cout << "Dividir pon 2\n" << endl;
+            cout << "Multiplicar pon 3\n" << endl;
+            cout << "Escribe tu elecion: " << endl;
+            cin >> o;
+
+            cout << "Introduce el primer número: ";
+            cin >> c;
+            cout << "Introduce el segundo número: ";
+            cin >> v;
+
+            if (o == 0) {
+                cout << "Tu respuesta es: " << (c + v) << endl;
             }
-            if (x==1){
-                cin >> c;
-                cin >> v;
-                cout << "tu respuesta es " << (c-v) << endl;
+            else if (o == 1) {
+                cout << "Tu respuesta es: " << (c - v) << endl;
             }
-            if (x==2){
-                cin >> c;
-                cin >> v;
-                cout << "tu respuesta es " << (c/v) << endl;
+            else if (o == 2) {
+                if (v != 0) {
+                    cout << "Tu respuesta es: " << (c / v) << endl;
+                } else {
+                    cout << "No se puede dividir entre cero." << endl;
+                }
             }
-            if (x=3){
-                cin >> c;
-                cin >> v;
-                cout << "tu respuesta es " << (c*v) << endl;
-            }
-            if (x==4){
-                cin >> c;
-                cin >> v;
-                cout << "tu respuesta es " << pow(c+v) << endl;
+            else if (o == 3) {
+                cout << "Tu respuesta es: " << (c * v) << endl;
+            } else {
+                cout << "Operación no válida." << endl;
             }
         }
-        if (x==1){
+
+        else if (x == 2) {
+            // Operaciones con decimales
             double c, v;
-        cout << "sumar pon 0\n" << endl;
-        cout << "restar pon 1\n" << endl;
-        cout << "dividir pon 2\n" << endl;
-        cout << "multiplicar pon 3\n" << endl;
-        cout << "potencia pon 4\n" << endl;
-        cin >> x;
-            if (x==0){
-                cin >> c;
-                cin >> v;
-                cout << "tu respuesta es " << (c+v) << endl;
+            int operation;
+            cout << "Sumar pon 0\n" << endl;
+            cout << "Restar pon 1\n" << endl;
+            cout << "Dividir pon 2\n" << endl;
+            cout << "Multiplicar pon 3\n" << endl;
+            cout << "Escribe tu elecion: " << endl;
+            cin >> operation;
+
+            cout << "Introduce el primer número: ";
+            cin >> c;
+            cout << "Introduce el segundo número: ";
+            cin >> v;
+
+            if (operation == 0) {
+                cout << "Tu respuesta es: " << (c + v) << endl;
             }
-            if (x==1){
-                cin >> c;
-                cin >> v;
-                cout << "tu respuesta es " << (c-v) << endl;
+            else if (operation == 1) {
+                cout << "Tu respuesta es: " << (c - v) << endl;
             }
-            if (x==2){
-                cin >> c;
-                cin >> v;
-                cout << "tu respuesta es " << (c/v) << endl;
+            else if (operation == 2) {
+                if (v != 0) {
+                    cout << "Tu respuesta es: " << (c / v) << endl;
+                } else {
+                    cout << "No se puede dividir entre cero." << endl;
+                }
             }
-            if (x=3){
-                cin >> c;
-                cin >> v;
-                cout << "tu respuesta es " << (c*v) << endl;
-            }
-            if (x==4){
-                cin >> c;
-                cin >> v;
-                cout << "tu respuesta es " << pow(c+v) << endl;
+            else if (operation == 3) {
+                cout << "Tu respuesta es: " << (c * v) << endl;
+            } else {
+                cout << "Operación no válida." << endl;
             }
         }
     }
+    return 0;
 }
