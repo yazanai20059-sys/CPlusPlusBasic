@@ -1,80 +1,140 @@
 #include <iostream>
-#include <cmath>   // Per a la funció pow()
-#include <bitset>  // Per a la conversió a binari
+#include <cmath>
+#include <bitset>  // Per a convertir a binari
+#include <sstream> // Per a convertir a hexadecimal
 using namespace std;
 
-// Funció per a convertir a binari
-void convertirBinari(int num) {
-    cout << "Binari: " << bitset<32>(num) << endl; // A la base binària (32 bits)
+// Funcions per a convertir a diferents bases
+string toHexadecimal(int n) {
+    stringstream ss;
+    ss << hex << n;
+    return ss.str();
 }
 
-// Funció per a convertir a octal
-void convertirOctal(int num) {
-    cout << "Octal: " << oct << num << endl; // A la base octal
-    cout << dec;  // Revertim a la base decimal
+string toBinary(int n) {
+    return bitset<32>(n).to_string(); // El màxim de 32 bits
 }
 
-// Funció per a convertir a hexadecimal
-void convertirHexadecimal(int num) {
-    cout << "Hexadecimal: " << hex << num << endl; // A la base hexadecimal
-    cout << dec;  // Revertim a la base decimal
-}
-
-// Funció per a canviar la base d'un nombre a la base desitjada
-void canviarBase(int num, int base) {
-    if (base == 2) {
-        convertirBinari(num);  // Convertim a binari
-    } else if (base == 8) {
-        convertirOctal(num);   // Convertim a octal
-    } else if (base == 10) {
-        cout << "Decimal: " << num << endl; // A la base decimal
-    } else if (base == 16) {
-        convertirHexadecimal(num); // Convertim a hexadecimal
-    } else {
-        cout << "Base no reconeguda!" << endl;
-    }
+string toOctal(int n) {
+    stringstream ss;
+    ss << oct << n;
+    return ss.str();
 }
 
 int main() {
-    int x, y;
+    int x;
+    while (true) {
+        cout << "Salir pon 0\n" << endl;
+        cout << "Entero pon 1\n" << endl;
+        cout << "Decimal pon 2\n" << endl;
+        cout << "Conversió de bases pon 3\n" << endl;
+        cin >> x;
 
-    cout << "Introduce un número: ";
-    cin >> x;
+        if (x == 0) {
+            break;  // Per sortir del bucle
+        }
 
-    cout << "Introduce otro número: ";
-    cin >> y;
+        if (x == 1) {
+            // Operacions amb enters
+            int c, v, operation;
+            cout << "Sumar pon 0\n" << endl;
+            cout << "Restar pon 1\n" << endl;
+            cout << "Dividir pon 2\n" << endl;
+            cout << "Multiplicar pon 3\n" << endl;
+            cin >> operation;
 
-    // Operacions
-    int suma = x + y;
-    int resta = x - y;
-    int multiplicacio = x * y;
-    double divisio = (double)x / y;   // Convertim a double per a divisió decimal
-    double potencia = pow(x, y);      // x elevat a y
-    double porcentaje = (x * y) / 100.0;
+            cout << "Introdueix el primer número: ";
+            cin >> c;
+            cout << "Introdueix el segon número: ";
+            cin >> v;
 
-    // Resultats de les operacions
-    cout << "La suma de " << x << " i " << y << " és: " << suma << endl;
-    cout << "La resta de " << x << " i " << y << " és: " << resta << endl;
-    cout << "La multiplicació de " << x << " i " << y << " és: " << multiplicacio << endl;
-    cout << "La divisió de " << x << " i " << y << " és: " << divisio << endl;
-    cout << "La elevació de " << x << " a " << y << " és: " << potencia << endl;
-    cout << "El " << x << "% de " << y << " és: " << porcentaje << endl;
+            if (operation == 0) {
+                cout << "La teva resposta és: " << (c + v) << endl;
+            }
+            else if (operation == 1) {
+                cout << "La teva resposta és: " << (c - v) << endl;
+            }
+            else if (operation == 2) {
+                if (v != 0) {
+                    cout << "La teva resposta és: " << (c / v) << endl;
+                } else {
+                    cout << "No es pot dividir entre zero." << endl;
+                }
+            }
+            else if (operation == 3) {
+                cout << "La teva resposta és: " << (c * v) << endl;
+            } else {
+                cout << "Operació no vàlida." << endl;
+            }
+        }
 
-    // Canvis de base
-    int base;
-    cout << "\nQuina base vols utilitzar (2 per binari, 8 per octal, 10 per decimal, 16 per hexadecimal)? ";
-    cin >> base;
+        else if (x == 2) {
+            // Operacions amb decimales
+            double c, v;
+            int operation;
+            cout << "Sumar pon 0\n" << endl;
+            cout << "Restar pon 1\n" << endl;
+            cout << "Dividir pon 2\n" << endl;
+            cout << "Multiplicar pon 3\n" << endl;
+            cin >> operation;
 
-    // Canviar la base per als nombres introduïts i els resultats
-    cout << "\nCanvis de base per als nombres introduïts:" << endl;
-    canviarBase(x, base);
-    canviarBase(y, base);
-    canviarBase(suma, base);
-    canviarBase(resta, base);
-    canviarBase(multiplicacio, base);
-    canviarBase(divisio, base);
-    canviarBase(potencia, base);
-    canviarBase(porcentaje, base);
+            cout << "Introdueix el primer número: ";
+            cin >> c;
+            cout << "Introdueix el segon número: ";
+            cin >> v;
 
+            if (operation == 0) {
+                cout << "La teva resposta és: " << (c + v) << endl;
+            }
+            else if (operation == 1) {
+                cout << "La teva resposta és: " << (c - v) << endl;
+            }
+            else if (operation == 2) {
+                if (v != 0) {
+                    cout << "La teva resposta és: " << (c / v) << endl;
+                } else {
+                    cout << "No es pot dividir entre zero." << endl;
+                }
+            }
+            else if (operation == 3) {
+                cout << "La teva resposta és: " << (c * v) << endl;
+            } else {
+                cout << "Operació no vàlida." << endl;
+            }
+        }
+
+        else if (x == 3) {
+            // Convertir entre bases
+            int number;
+            int baseChoice;
+            cout << "Introdueix un número enter: ";
+            cin >> number;
+
+            cout << "Selecciona la base a la qual vols convertir: \n";
+            cout << "1. Binari\n";
+            cout << "2. Octal\n";
+            cout << "3. Decimal\n";
+            cout << "4. Hexadecimal\n";
+            cin >> baseChoice;
+
+            switch(baseChoice) {
+                case 1:
+                    cout << "El número en binari és: " << toBinary(number) << endl;
+                    break;
+                case 2:
+                    cout << "El número en octal és: " << toOctal(number) << endl;
+                    break;
+                case 3:
+                    cout << "El número en decimal és: " << number << endl;
+                    break;
+                case 4:
+                    cout << "El número en hexadecimal és: " << toHexadecimal(number) << endl;
+                    break;
+                default:
+                    cout << "Opció no vàlida." << endl;
+                    break;
+            }
+        }
+    }
     return 0;
 }
