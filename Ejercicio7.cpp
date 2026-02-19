@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 #include <bitset>  // Per a convertir a binari
 #include <sstream> // Per a convertir a hexadecimal
 using namespace std;
