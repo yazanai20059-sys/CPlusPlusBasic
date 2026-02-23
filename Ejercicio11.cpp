@@ -1,11 +1,9 @@
 #include <iostream>
-
-
+using namespace std;
 bool esVocal(char car) {
     
     car = tolower(car);
     
-    // Comprovem si el caràcter és una de les vocals
     if (car == 'a' || car == 'e' || car == 'i' || car == 'o' || car == 'u') {
         return true;
     }
@@ -13,17 +11,13 @@ bool esVocal(char car) {
 }
 
 int main() {
-    // Demanar un caràcter per a l'usuari
     char car;
-    std::cout << "Escriu un caràcter: ";
-    std::cin >> car;
-
-    // Comprovem si és una vocal i mostrem el resultat
+    cout << "Escriu un caràcter: ";
+    cin >> car;
     if (esVocal(car)) {
-        std::cout << "El caràcter " << car << " és una vocal." << std::endl;
+        cout << "El caràcter " << car << " és una vocal." << endl;
     } else {
-        std::cout << "El caràcter " << car << " és una Consonant." << std::endl;
+        cout << "El caràcter " << car << " és una Consonant." << endl;
     }
-
     return 0;
 }
