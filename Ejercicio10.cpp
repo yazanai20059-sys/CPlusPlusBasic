@@ -1,14 +1,11 @@
 #include <iostream>
 #include <string>
-#include <vector>
 
 using namespace std;
 
 int main() {
-    
-    string cadena;
+    string c;
     cout << "Escribe una cadena: ";
-    getline(cin, cadena);
-
-    cout << "La longitud de la cadena es: " << cadena.length() << endl;
+    getline(cin, c);
+    cout << "La longitud de la cadena es: " << c.size() << endl;
 }
